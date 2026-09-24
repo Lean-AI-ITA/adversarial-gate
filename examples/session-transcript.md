@@ -1,7 +1,10 @@
 # Example session — the gate in action
 
-An annotated transcript. The interesting moment is **round 2**, where a single
-user objection changes the architecture *before* any token is spent building.
+An annotated transcript, running the Claude Code adapter (its engine
+vocabulary — subagents — shows up below). The logic is the same on every
+other adapter; only the engine names would change. The interesting moment is
+**round 2**, where a single user objection changes the architecture *before*
+any token is spent building.
 
 > Annotations in blockquotes are commentary, not part of the session.
 

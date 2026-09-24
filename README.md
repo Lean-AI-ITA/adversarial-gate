@@ -25,7 +25,8 @@ explicit approval.
 | 🕵️ **Contests itself, in isolation** | Above trivial complexity, self-critique runs as an isolated adversary subagent — not the same context defending the plan it just wrote |
 | 🧩 **Proportional, not performative** | Trivial request → 1 agent, out of the way. Product-code request → a justified 5-role preset, trimmed by argument, never assumed |
 | 🏗️ **Agent architecture is designed, not templated** | Every agent gets an ID, a role, an objective and a model tier, decided from scratch per request — never a fixed roster copy-pasted across plans |
-| 🔀 **Two ways out, both engine-aware** | **PATH A** hands off a structured brief to a spec-driven PRD tool; **PATH B** builds directly, choosing between subagents / agent teams / dynamic workflows — the engine is picked twice, once for the analysis, once for the build, and justified both times |
+| 🔀 **Two ways out, both execution-aware** | **PATH A** hands off a structured brief to a spec-driven PRD tool; **PATH B** builds directly, choosing the execution model your harness actually offers — picked twice, once for the analysis, once for the build, and justified both times |
+| 🌐 **One gate, six harnesses** | Claude Code, Cursor, Copilot, Codex CLI, OpenCode, Aider — same `core/GATE.md`, one adapter per harness for what genuinely differs (isolation, invocation, whether subagents exist at all) |
 | 🤝 **Hands off instead of competing** | Writes no PRD of its own — produces a handoff brief carrying the one artefact nobody else keeps: the record of the review |
 
 ## The problem
@@ -88,13 +89,37 @@ Three properties, in order of how much they matter:
 
 ## Install
 
+One clone, then pick your harness — the gate logic in `core/GATE.md` is the
+same everywhere; only how it's invoked differs.
+
 ```bash
 git clone https://github.com/Lean-AI-ITA/adversarial-gate.git
-mkdir -p ~/.claude/skills
-cp -r adversarial-gate ~/.claude/skills/
+cd adversarial-gate
+./install.sh
 ```
 
-Then simply describe a goal. The skill activates when you state an objective
+`install.sh` detects likely harnesses from what's already in your project
+(`.cursor/`, `.github/`, `~/.codex`, `.opencode/`, `.aider.conf.yml`,
+`~/.claude`) and asks you to confirm, or skip straight to one:
+
+```bash
+./install.sh --harness=claude-code   # or: cursor | copilot | codex | opencode | aider
+```
+
+| Harness | Invocation | Isolation for self-critique |
+|---|---|---|
+| **Claude Code** | auto, by description — or `/adversarial-gate` | true isolated subagent |
+| **Cursor** | Agent Requested rule — or `@adversarial-gate` | fresh chat (weaker) |
+| **GitHub Copilot** | `/adversarial-gate` in Copilot Chat | fresh chat (weaker) |
+| **Codex CLI** | `/prompts:adversarial-gate` — or via `AGENTS.md` | fresh session (weaker) |
+| **OpenCode** | `/adversarial-gate` | true subagent |
+| **Aider** | `/read` or `.aider.conf.yml` `read:` | fresh session (weaker) |
+
+No adapter for your tool? `AGENTS.md` at the repo root is read natively by
+several harnesses (Codex, OpenCode) with no install step at all, and is a
+reasonable starting point to write your own adapter against `core/GATE.md`.
+
+Then simply describe a goal. The gate activates when you state an objective
 large enough that the obvious move would be to start producing immediately.
 
 ## See it work
@@ -136,26 +161,29 @@ Honest self-assessment, not a pitch:
   *Proportional* below), but it will never fully disappear on non-trivial ones.
   It's friction sold on purpose, to people who've already paid for the
   alternative once.
-- **It assumes** you're already orchestrating subagents, agent teams or
-  dynamic workflows in Claude Code. If you're not there yet, the token
-  estimate and calibration ledger won't mean much — install it when that
-  becomes true, not before.
+- **It assumes** you're already doing multi-step, agentic work — orchestrating
+  subagents, or just running a long agentic session in Cursor, Copilot, Codex,
+  OpenCode or Aider. If you're not there yet, the cost estimate and
+  calibration ledger won't mean much — install it when that becomes true, not
+  before.
 - **Especially relevant if you run local or self-hosted models.** Token cost
   there isn't an abstract line on a bill — it's your own GPU, your own
   electricity, your own twenty minutes watching inference run on the wrong
   architecture. The cost-before-execution discipline hits harder when the
-  alternative is felt directly on your own hardware. One caveat, honestly
-  stated: §1.5's engine choice (subagents / agent teams / dynamic workflows)
-  is Claude Code vocabulary — mapping it onto a local orchestrator is an
-  adaptation, not a drop-in.
+  alternative is felt directly on your own hardware. The Aider adapter is
+  built for exactly this case — one caveat, honestly stated there: it has no
+  subagent isolation to offer, only a fresh session, which is weaker.
 
 ## Design notes
 
 - **Proportional.** If a request is trivial, the gate says so and gets out of
   the way. A gate that fires on everything is a tax, not a control.
-- **Engine-agnostic.** It chooses between subagents / agent teams / dynamic
-  workflows twice, for different purposes: once to *analyse*, once to *build*.
-  Analysis is almost always light; the engines only really differ on the build.
+- **Harness-agnostic core, harness-specific execution.** `core/GATE.md` never
+  names a specific engine — each adapter's Execution Model does that, twice,
+  for different purposes: once to *analyse*, once to *build*. On Claude Code
+  that's subagents / agent teams / dynamic workflows; on a single-agent
+  harness like Aider it's honestly "there is no choice, you're the only
+  agent." Analysis is almost always light regardless of harness.
 - **Epistemically labelled.** Every claim is marked Evidence / Inference /
   Assumption / Uncertainty. Estimates are never dressed up as measurements.
 - **No unbounded loops.** Every loop carries a soft stop condition *and* a hard

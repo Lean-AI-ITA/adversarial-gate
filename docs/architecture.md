@@ -1,7 +1,11 @@
 # Architecture
 
 The whole point of this skill is the shape of the diagram below: **three gates
-in a row, and nothing crosses one without you.**
+in a row, and nothing crosses one without you.** The flow itself is
+harness-agnostic (it's `core/GATE.md`); this diagram illustrates it with
+Claude Code's own engine vocabulary (subagents / agent teams / dynamic
+workflows) because it's the adapter with the most to show. Swap in your own
+harness's Execution Model and the shape doesn't change.
 
 ## Full flow
 

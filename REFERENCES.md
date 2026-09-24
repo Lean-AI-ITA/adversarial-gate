@@ -4,15 +4,22 @@ This skill deliberately **does not duplicate** the documentation of the
 execution engines. Engine mechanics change; a skill that restates them drifts
 out of date and starts teaching people things that are no longer true.
 
-## Official engine documentation
+## Official execution-model documentation
 
-Read these for how subagents, agent teams and dynamic workflows actually work —
-who holds the plan, where intermediate results live, and how they scale:
+Read these for how each harness actually runs work — who holds the plan,
+where intermediate results live, whether subagents exist at all. This is
+exactly the kind of mechanics `core/GATE.md` refuses to restate, because it
+goes stale the moment a harness ships a change:
 
-- Anthropic — Claude Code documentation (subagents, agent teams, dynamic workflows)
-  <https://docs.claude.com/en/docs/claude-code>
+- Claude Code (subagents, agent teams, dynamic workflows) — <https://docs.claude.com/en/docs/claude-code>
+- Cursor (rules, Background Agents) — <https://cursor.com/docs>
+- GitHub Copilot (prompt files, coding agent) — <https://docs.github.com/copilot>
+- Codex CLI (AGENTS.md, custom prompts) — <https://developers.openai.com/codex>
+- OpenCode (agents, subagents, commands) — <https://opencode.ai/docs>
+- Aider (conventions files, config) — <https://aider.chat/docs>
 
-Two things worth knowing before choosing an engine:
+Two things worth knowing about the Claude Code engines specifically, since
+that's the adapter with the most native isolation to offer:
 
 - **Agent teams are experimental** and disabled by default. Their tooling has
   already changed once (team lifecycle tools removed, `team_name` deprecated).
@@ -52,7 +59,7 @@ credited here rather than silently absorbed:
 
 | Project | What it does | What's different here |
 |---|---|---|
-| **carrilloapps/skills — Devil's Advocate** | A pre-action gate across 40+ agents and ~12 domains (security, architecture, compliance...), with a proceed/revise/cancel decision and a "handbrake" halt on critical findings | This skill is Claude-Code-specific, costs the plan in tokens, and runs a round-capped *dialogue with the human* rather than a framework sweep. **Borrowed:** the handbrake — see the critical-domain rule in `SKILL.md` §Absolute rules |
+| **carrilloapps/skills — Devil's Advocate** | A pre-action gate across 40+ agents and ~12 domains (security, architecture, compliance...), with a proceed/revise/cancel decision and a "handbrake" halt on critical findings | This gate costs the plan explicitly and runs a round-capped *dialogue with the human* rather than a framework sweep, across six harness adapters rather than a plugin-per-tool. **Borrowed:** the handbrake — see the critical-domain rule in `core/GATE.md` §Absolute rules |
 | **Dzazaleo/adversarial-review-skills** | Cross-model review of *finished* code; a permanent ledger rules truthful/false per finding, and a deferred finding must produce a real backlog file, not a promise | This skill gates the plan *before* a token is spent, not the code after. **Borrowed:** the discipline that a deferred objection needs a real artefact — see the "deferred, cap reached" rows in `templates/handoff-brief.md` and `templates/run-trace.md` |
 | lemon03390, alirezarezvani, poteto, aojdevstudio — assorted `adversarial-review` skills | Also post-work code review; one worker + one critic pattern | Same category as above: reviews output, not a plan. No pre-spawn gate, no token estimate, no calibration ledger |
 
