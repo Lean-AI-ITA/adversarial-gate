@@ -26,6 +26,12 @@ otherwise, they move fast.
   attack it. Disclose that this is a weaker isolation than a genuinely
   separate agent context.
 
+**Effort (§1.3):** some models Codex CLI can run expose their own
+reasoning-effort parameter independent of model choice — check your current
+config for it rather than assuming it's there or not. If it's available,
+route it per agent like model choice; if it isn't, fold intensity into which
+model you pick instead.
+
 ## Activation
 
 Two complementary mechanisms:

@@ -25,6 +25,11 @@ closest of any adapter in this repo to Claude Code's engine. `subagent_depth`
 this is one of the two adapters in this repo (with Claude Code) that can
 offer real isolation natively.
 
+**Effort (§1.3):** OpenCode's per-agent config may expose model-level
+parameters beyond the model name itself for some providers — check what your
+configured models actually support rather than assuming a dial exists.
+Where none is exposed, fold intensity into which model you assign per agent.
+
 ## Activation
 
 Place this file at `.opencode/commands/adversarial-gate.md` (project) or

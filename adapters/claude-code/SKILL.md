@@ -47,3 +47,11 @@ multiple-choice/confirmation tool, use it for STEP 3's A/B and for any other
 explicit approval in `core/GATE.md` §2.1.1 — the user picks instead of
 typing a sentence. If it isn't available in this session, fall back to the
 lettered text menu; don't claim a UI that isn't there.
+
+**Effort (§1.3):** Claude Code exposes reasoning effort as an axis
+independent of model — check what your current setup actually offers rather
+than assuming a fixed list, since it changes. Treat it exactly like model
+choice: justify it per agent in the table, don't default every agent to the
+same level. A narrow classifier at low effort and a security verifier at
+high effort can both be true in the same plan — that's the point of the
+knob, not an inconsistency to smooth over.

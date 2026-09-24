@@ -34,6 +34,11 @@ actually applies:
 - **The review itself (§2), the handbrake (rule 6), and the handoff brief
   (Path A)** — apply exactly as written. None of that depends on multi-agent
   orchestration.
+- **Effort (§1.3)** — moot for the *agent count* axis (there's only one of
+  you), but some models Aider can drive do expose their own reasoning-effort
+  setting (check `.aider.conf.yml` for a `reasoning-effort`-style option
+  against the model you've configured). If yours does, that's your one real
+  effort knob for this harness; if it doesn't, there isn't one to fake.
 
 ## Activation
 

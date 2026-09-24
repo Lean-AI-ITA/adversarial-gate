@@ -24,6 +24,11 @@ shared context, comparable to Claude Code's subagents.
   reasoning behind it. Disclose that this is a weaker isolation than a truly
   separate agent context.
 
+**Effort (§1.3):** Copilot doesn't expose reasoning effort as a dial separate
+from model choice, as of this writing. Fold intensity into which model you
+pick per agent instead of inventing a second knob — check current docs if
+that's changed.
+
 ## Activation
 
 Place this file at `.github/prompts/adversarial-gate.prompt.md`. Copilot

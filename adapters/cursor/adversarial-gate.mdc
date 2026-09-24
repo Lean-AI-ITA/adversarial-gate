@@ -32,6 +32,10 @@ Disclose that this isolation is weaker than a true separate context — a new
 chat in the same project can still see prior chat history depending on
 Cursor's settings; check before relying on it.
 
+**Effort (§1.3):** Cursor doesn't expose reasoning effort as a dial separate
+from model choice. Fold intensity into which model you pick per agent
+instead of inventing a second knob that isn't there.
+
 ## Activation
 
 This is an `.mdc` rule with `alwaysApply: false`, i.e. **Agent Requested**

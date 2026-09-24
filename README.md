@@ -212,6 +212,10 @@ Honest self-assessment, not a pitch:
   builds pause once, after the first work package, before the rest of the
   budget is spent. Simple and Medium run straight through — a checkpoint
   there would be cost with no risk behind it to justify it.
+- **Model and effort are two knobs, not one.** Every agent gets a model tier
+  *and*, where the harness exposes it, an independent reasoning-effort
+  level — a narrow classifier at low effort and a security verifier at high
+  effort can coexist in the same plan without either being wasteful.
 
 ## Contributing
 

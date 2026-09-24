@@ -93,14 +93,21 @@ gets a distinct, verifiable responsibility, whether or not your harness can
 run it as a separately spawned agent.
 
 Specify per unit: *ID · Name · Role · Objective · Responsibilities · Input ·
-Output · Skills · Quality criteria · Dependencies · Model (if your harness
-supports model routing)*. This full spec is your working notes — when you
-present in §2.1, compress Objective + Responsibilities into the one-line
-**Mandate** the user actually reads. Keep the full spec around; you'll need
-it if an agent gets challenged in §2.2 and you have to defend or revise it
-with specifics, not vibes.
+Output · Skills · Quality criteria · Dependencies · Model · Effort (see
+below, both if your harness supports them)*. This full spec is your working
+notes — when you present in §2.1, compress Objective + Responsibilities into
+the one-line **Mandate** the user actually reads. Keep the full spec around;
+you'll need it if an agent gets challenged in §2.2 and you have to defend or
+revise it with specifics, not vibes.
 
-**Model routing** (cost containment, where available):
+**Model and effort routing** (cost containment, where available) — **two
+independent knobs, not one.** Model picks *which* capability; effort picks
+*how hard* it thinks within that capability. Don't burn depth on a task that
+doesn't need it, and don't assume a cheaper model needs more effort to
+compensate for real complexity it can't actually handle — that's the wrong
+knob for the problem.
+
+*Model:*
 
 | Tier | Use for |
 |---|---|
@@ -108,9 +115,25 @@ with specifics, not vibes.
 | Mid | specialists, synthesisers |
 | Top | only where deep reasoning genuinely changes the outcome |
 
-> Exception worth remembering: do not cheap out on the agent — or the pass —
-> whose job is to decide whether the work has value at all. A weak red-team
-> produces weak objections and a false green light.
+*Effort (only where your harness exposes it as a separate dial — see your
+adapter):*
+
+| Level | Use for |
+|---|---|
+| Low | narrow, well-defined, low-ambiguity work — most classifiers, filters, single-purpose passes |
+| Medium | default for specialist work where real judgment is involved |
+| High / Max | correctness-critical or broad-coverage work — security/vulnerability verification, ambiguous calls, the isolated adversary in §2.2 |
+
+> Exception worth remembering, on **both axes**: do not cheap out on the
+> agent — or the pass — whose job is to decide whether the work has value at
+> all, or to verify something security-critical. A weak red-team produces
+> weak objections and a false green light; a red-team run at low effort
+> fails the same way for a different reason.
+
+**Who picks model and effort:** the system does, same as agent count and
+everything else in §1.3 — justified in the table, open to challenge in
+STEP 2 like any other line. The opening question is never "which model do
+you want" any more than it's "which agent" (rule 5).
 
 **If your harness cannot spawn separate agents at all** (see your adapter):
 treat §1.3 as a checklist of hats the single agent wears in sequence, not
@@ -205,19 +228,20 @@ Show the plan. Execute nothing.
 - **Interpreted objective** + Definition of Done
 - **Strategy** — why this architecture
 - **Agents/passes** — table: *ID · Name · Role · Mandate · Model (if
-  applicable)*. **Mandate is one line, not a label** — what this unit
-  actually does and why it exists, enough that the table alone explains the
-  roster without cross-referencing §1.3. Same discipline the Product Build
-  roster (§1.3.1) already uses — generalise it to every agent, not just that
-  preset.
+  applicable) · Effort (if your harness exposes it)*. **Mandate is one line,
+  not a label** — what this unit actually does and why it exists, enough
+  that the table alone explains the roster without cross-referencing §1.3.
+  Same discipline the Product Build roster (§1.3.1) already uses — generalise
+  it to every agent, not just that preset.
 - **Workflow** — diagram
 - **Design rationale — why this is the cheapest shape that still works.** One
-  short paragraph tying the agent count, the patterns and the execution model
-  back to cost: what was *not* added, and why. "No dedicated classifier — only
-  one input category, so cut" is the shape this takes. The estimate in §1.6
-  is a number; this is the reasoning that number is supposed to be the
-  minimum of. If you can't name something you deliberately left out, you
-  probably haven't minimised yet.
+  short paragraph tying the agent count, the patterns, the model/effort
+  choices and the execution model back to cost: what was *not* added, and
+  why — including why an agent that could have run at high effort didn't.
+  "No dedicated classifier — only one input category, so cut" is the shape
+  this takes. The estimate in §1.6 is a number; this is the reasoning that
+  number is supposed to be the minimum of. If you can't name something you
+  deliberately left out, you probably haven't minimised yet.
 - **Patterns used** — with a justification each
 - **Execution model** — with justification, including why not the alternatives
 - **Cost estimate** — typical / worst case, flagged as assumption
