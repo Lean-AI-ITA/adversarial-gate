@@ -24,6 +24,8 @@ explicit approval.
 | 🖐️ **Handbrake on critical risk** | Security, irreversibility, minors'/sensitive data, budget, legal exposure — these stop the flow outright instead of waiting their turn in the round cap |
 | 🕵️ **Contests itself, in isolation** | Above trivial complexity, self-critique runs as an isolated adversary subagent — not the same context defending the plan it just wrote |
 | 🧩 **Proportional, not performative** | Trivial request → 1 agent, out of the way. Product-code request → a justified 5-role preset, trimmed by argument, never assumed |
+| 🏗️ **Agent architecture is designed, not templated** | Every agent gets an ID, a role, an objective and a model tier, decided from scratch per request — never a fixed roster copy-pasted across plans |
+| 🔀 **Two ways out, both engine-aware** | **PATH A** hands off a structured brief to a spec-driven PRD tool; **PATH B** builds directly, choosing between subagents / agent teams / dynamic workflows — the engine is picked twice, once for the analysis, once for the build, and justified both times |
 | 🤝 **Hands off instead of competing** | Writes no PRD of its own — produces a handoff brief carrying the one artefact nobody else keeps: the record of the review |
 
 ## The problem
