@@ -72,3 +72,21 @@ up-front authorisation is not a gate.
 
 **Healthy range:** roughly a third to two thirds of plans change. Outside that
 band, something is miscalibrated — and it isn't the user.
+
+---
+
+## Scope changes during review
+
+A different signal from "materially changed" above — that table says *if*
+the plan moved, this one says *which direction*. A review that only ever
+grows the plan back after cost forces a cut isn't earning its keep either;
+the non-goals discipline in Path B step 6 depends on cuts actually sticking.
+
+| Runs reviewed | Scope shrank (a work package cut) | Scope grew | Rearranged only, same scope |
+|---|---|---|---|
+| 0 | — | — | — |
+
+No data yet — this table starts empty on purpose. Populate it from real
+Path B step 8 runs only; a plausible-looking number here that didn't come
+from an actual review is exactly the "confident guess on two data points"
+this whole file exists to avoid.

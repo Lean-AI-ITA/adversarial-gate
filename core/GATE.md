@@ -94,7 +94,11 @@ run it as a separately spawned agent.
 
 Specify per unit: *ID · Name · Role · Objective · Responsibilities · Input ·
 Output · Skills · Quality criteria · Dependencies · Model (if your harness
-supports model routing)*.
+supports model routing)*. This full spec is your working notes — when you
+present in §2.1, compress Objective + Responsibilities into the one-line
+**Mandate** the user actually reads. Keep the full spec around; you'll need
+it if an agent gets challenged in §2.2 and you have to defend or revise it
+with specifics, not vibes.
 
 **Model routing** (cost containment, where available):
 
@@ -200,8 +204,20 @@ Show the plan. Execute nothing.
 
 - **Interpreted objective** + Definition of Done
 - **Strategy** — why this architecture
-- **Agents/passes** — table: ID · Agent · Role · Activity · Model (if applicable)
+- **Agents/passes** — table: *ID · Name · Role · Mandate · Model (if
+  applicable)*. **Mandate is one line, not a label** — what this unit
+  actually does and why it exists, enough that the table alone explains the
+  roster without cross-referencing §1.3. Same discipline the Product Build
+  roster (§1.3.1) already uses — generalise it to every agent, not just that
+  preset.
 - **Workflow** — diagram
+- **Design rationale — why this is the cheapest shape that still works.** One
+  short paragraph tying the agent count, the patterns and the execution model
+  back to cost: what was *not* added, and why. "No dedicated classifier — only
+  one input category, so cut" is the shape this takes. The estimate in §1.6
+  is a number; this is the reasoning that number is supposed to be the
+  minimum of. If you can't name something you deliberately left out, you
+  probably haven't minimised yet.
 - **Patterns used** — with a justification each
 - **Execution model** — with justification, including why not the alternatives
 - **Cost estimate** — typical / worst case, flagged as assumption
@@ -382,7 +398,12 @@ loop:                      # only if iteration is required
 8. **Append one row to `CALIBRATION.md`.** Non-negotiable, and the last thing
    you do. Log date, execution model, agent/pass count, estimate, actual,
    Δ%, and the primary cause of the gap. Recompute the correction factors
-   every ~5 runs, and update the review-outcomes table.
+   every ~5 runs, and update the review-outcomes table **and the scope-change
+   table** — log whether STEP 2 objections shrank the plan (cut a work
+   package), grew it, or just rearranged it. This is a different signal from
+   "materially changed": a review that only ever grows the plan back after
+   cost forces a cut isn't doing the job rule 4's non-goals discipline
+   depends on.
 
    A run that isn't logged makes the next estimate no better than this one.
 

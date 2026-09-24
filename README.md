@@ -199,6 +199,15 @@ Honest self-assessment, not a pitch:
   starting slate is five roles — UX/product design, refactoring & performance,
   security, product/user-needs liaison, and a scout for reusable prior art —
   each cut or kept by argument in the review, never assumed.
+- **Every agent gets a one-line Mandate, not just a label.** ID, name, role
+  and what it actually does — the same clarity the Product Build roster
+  already had, generalised to every agent in every plan.
+- **The plan has to show its own cheapest shape.** Alongside the agent table,
+  a short rationale ties the agent count, patterns and execution model back
+  to cost — naming what was deliberately left out, not just what's in.
+- **Scope direction is tracked, not just scope change.** `CALIBRATION.md` logs
+  whether review objections shrank the plan, grew it, or just rearranged
+  it — a review that only ever grows the plan back isn't earning its keep.
 
 ## Contributing
 
