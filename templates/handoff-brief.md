@@ -31,6 +31,23 @@ not the original wording of the request.>
 **Out of scope (non-goals)**
 - ...
 
+### 3.1 Requirements
+
+> Skip this subsection for a brief small enough that the work packages below
+> say everything — don't fill it out for its own sake.
+
+**Functional**
+
+| ID | Requirement | Priority (MoSCoW) | Notes |
+|---|---|---|---|
+| RF1 | | Must / Should / Could / Won't | |
+
+**Non-functional**
+
+| ID | Requirement | Metric / Threshold |
+|---|---|---|
+| RNF1 | Performance / Security / Privacy / ... | |
+
 ## 4. Work packages
 
 > Each package is autonomous, with its own dependencies and acceptance criteria.

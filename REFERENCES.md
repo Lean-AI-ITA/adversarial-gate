@@ -4,6 +4,35 @@ This skill deliberately **does not duplicate** the documentation of the
 execution engines. Engine mechanics change; a skill that restates them drifts
 out of date and starts teaching people things that are no longer true.
 
+## Origin
+
+The STEP 1 → STEP 2 → STEP 3 gate in `core/GATE.md` — the problem-model
+dimensions, the six workflow patterns, the three-engine decision tree, the
+token-simulation formula, the proportionality table, and the PRD/handoff
+split — restructures a prior single-file prompt by this repository's own
+author (`multi_agent_orchestrator_FINAL.md`, unpublished, Italian original).
+This repo formats that prompt as a Claude Code skill and a multi-harness
+spec, and adds what the original prompt didn't have:
+
+- the calibration ledger (`CALIBRATION.md`) and the read-before-estimate
+  discipline — the original simulates tokens once per run, with no memory
+  across runs
+- **the requirement that the gate contest its own weakest assumption**, not
+  just referee objections the user happens to raise — the original's review
+  loop only handles user-raised objections
+- isolating that self-critique above trivial complexity, and escalating a
+  critical-domain finding to a handbrake instead of a round
+- the Product Build roster preset (§1.3.1)
+- scope-direction tracking, alongside whether the plan changed at all
+- six harness adapters — the original targets Claude Code only
+- the presentation format (§2.1.1): tables, a per-agent Mandate line, the
+  design-rationale paragraph
+- the MoSCoW/NFR requirements tables in `templates/handoff-brief.md` are
+  ported *from* the original's PRD template — credited the other direction
+
+The sections below compare against the *public* skill landscape — a separate
+question from this one, which is about this repo's own lineage.
+
 ## Official execution-model documentation
 
 Read these for how each harness actually runs work — who holds the plan,
@@ -63,9 +92,10 @@ credited here rather than silently absorbed:
 | **Dzazaleo/adversarial-review-skills** | Cross-model review of *finished* code; a permanent ledger rules truthful/false per finding, and a deferred finding must produce a real backlog file, not a promise | This skill gates the plan *before* a token is spent, not the code after. **Borrowed:** the discipline that a deferred objection needs a real artefact — see the "deferred, cap reached" rows in `templates/handoff-brief.md` and `templates/run-trace.md` |
 | lemon03390, alirezarezvani, poteto, aojdevstudio — assorted `adversarial-review` skills | Also post-work code review; one worker + one critic pattern | Same category as above: reviews output, not a plan. No pre-spawn gate, no token estimate, no calibration ledger |
 
-None of these were the source of the original design — the gate, the token
-estimate and the calibration ledger predate this search. What changed after
-reading them: the handbrake rule and the deferred-objection bookkeeping above.
+None of these public projects were the source of the original gate design —
+see Origin above for that. The calibration ledger and the self-critique
+requirement predate this search too. What changed after reading them: the
+handbrake rule and the deferred-objection bookkeeping above.
 
 ## Epistemic status of this document
 
