@@ -135,6 +135,23 @@ everything else in §1.3 — justified in the table, open to challenge in
 STEP 2 like any other line. The opening question is never "which model do
 you want" any more than it's "which agent" (rule 5).
 
+**Load balance.** When the roster is designed, check that responsibilities
+are actually distributed — not five items piled on A1 and one on A2 because
+A1 got designed first. An unbalanced roster is usually a sign the agent
+*count* itself is wrong: split the overloaded one if its excess is genuinely
+separable and worth the extra cost, or fold the underloaded one into another
+if its slice doesn't justify a dedicated agent. This is a check, not a
+target — don't force artificial balance where the work itself is lopsided
+for a good reason, and say so if it is.
+
+**An agent proving capable of more mid-run is not a reason to expand it in
+place.** That's new scope, discovered during execution — it gets re-gated
+like any other adjacent work (see Path B step 6, "Stop at the edge of
+non_goals"), not folded in silently because the agent happened to be doing
+well. Performance earns the *role* more trust next time this gate designs a
+roster (see `CALIBRATION.md`'s role-performance table) — it doesn't earn the
+instance more scope this time without your approval.
+
 **If your harness cannot spawn separate agents at all** (see your adapter):
 treat §1.3 as a checklist of hats the single agent wears in sequence, not
 roles that run in parallel. Say so in STEP 2 rather than silently presenting
@@ -443,6 +460,13 @@ loop:                      # only if iteration is required
    "materially changed": a review that only ever grows the plan back after
    cost forces a cut isn't doing the job rule 4's non-goals discipline
    depends on.
+
+   Also update **the role-performance table**, from `run_trace.md`'s
+   Score/Decision columns — per role *type* (e.g. "Security Reviewer"), not
+   per agent ID, since the ID doesn't exist past this run but the role gets
+   redesigned from scratch next time §1.3 runs. This is what lets a role's
+   track record inform its own model/effort routing next time, instead of
+   every run re-deriving it from nothing.
 
    A run that isn't logged makes the next estimate no better than this one.
 

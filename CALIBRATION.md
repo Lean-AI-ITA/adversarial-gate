@@ -86,6 +86,11 @@ the non-goals discipline in Path B step 6 depends on cuts actually sticking.
 |---|---|---|---|
 | 0 | — | — | — |
 
+No data yet — this table starts empty on purpose. Populate it from real
+Path B step 8 runs only; a plausible-looking number here that didn't come
+from an actual review is exactly the "confident guess on two data points"
+this whole file exists to avoid.
+
 ---
 
 ## Complex-build checkpoints
@@ -103,7 +108,21 @@ optimistic and needs tightening instead of patching mid-build.
 No data yet. A Complex build is rare enough that this table will fill
 slowly — don't force a row from a Simple or Medium run to pad it.
 
-No data yet — this table starts empty on purpose. Populate it from real
-Path B step 8 runs only; a plausible-looking number here that didn't come
-from an actual review is exactly the "confident guess on two data points"
-this whole file exists to avoid.
+---
+
+## Role performance over time
+
+Tracks accuracy per role *type* (e.g. "Security Reviewer", "Scout"), not per
+agent ID — the ID is gone after this run, but the role gets redesigned from
+scratch the next time §1.3 runs, and this is what lets it start from
+evidence instead of nothing. A role that consistently needs a re-run is a
+signal to route it at higher effort by default, not a mark against whichever
+instance happened to draw it this time — no agent "gets promoted"; the role
+gets better-calibrated defaults, per `core/GATE.md`'s load-balance note.
+
+| Role type | Runs seen | Accepted without re-run | Re-run needed | Note |
+|---|---|---|---|---|
+
+No data yet. Populate from `run_trace.md`'s Score/Decision columns via
+Path B step 8 — same rule as every other table here: no row without a real
+run behind it.

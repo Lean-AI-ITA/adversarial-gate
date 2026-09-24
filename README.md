@@ -216,6 +216,11 @@ Honest self-assessment, not a pitch:
   *and*, where the harness exposes it, an independent reasoning-effort
   level — a narrow classifier at low effort and a security verifier at high
   effort can coexist in the same plan without either being wasteful.
+- **Performance earns the role more trust, not the instance more scope.**
+  Agent IDs don't survive past their own run, so nothing is "promoted"
+  mid-build — an agent proving capable of more gets re-gated like any other
+  adjacent work. What persists is `CALIBRATION.md`'s role-performance table,
+  which calibrates how the *next* run designs that role.
 
 ## Contributing
 
