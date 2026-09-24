@@ -14,6 +14,18 @@ explicit approval.
 
 ---
 
+## Why it's different
+
+| | |
+|---|---|
+| 🛑 **Human-in-the-loop, not model-in-the-loop** | The adversarial review happens with **you**, capped at 3 rounds — not with another LLM marking its own homework |
+| 💰 **Cost is a first-class citizen** | Every plan ships a typical/worst-case token estimate, explicitly labelled as an assumption, before anything runs |
+| 📈 **Self-calibrating** | Estimated vs actual tokens are reconciled after every build and logged to [`CALIBRATION.md`](CALIBRATION.md) — the skill gets better at guessing over time, and admits it out loud when it isn't yet |
+| 🖐️ **Handbrake on critical risk** | Security, irreversibility, minors'/sensitive data, budget, legal exposure — these stop the flow outright instead of waiting their turn in the round cap |
+| 🕵️ **Contests itself, in isolation** | Above trivial complexity, self-critique runs as an isolated adversary subagent — not the same context defending the plan it just wrote |
+| 🧩 **Proportional, not performative** | Trivial request → 1 agent, out of the way. Product-code request → a justified 5-role preset, trimmed by argument, never assumed |
+| 🤝 **Hands off instead of competing** | Writes no PRD of its own — produces a handoff brief carrying the one artefact nobody else keeps: the record of the review |
+
 ## The problem
 
 Agentic coding tools are extremely good at beginning work. You describe a goal,
