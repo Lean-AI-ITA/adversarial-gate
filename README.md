@@ -225,6 +225,14 @@ Honest self-assessment, not a pitch:
   engine correction factor.** Saves the cost of designing from a blank page —
   never the scrutiny. A template still gets justified and challenged in
   STEP 2 like any agent designed from nothing.
+- **Span of control.** A synthesiser fusing more than a handful of parallel
+  specialists is a bottleneck, not a shortcut — past roughly five or six,
+  the plan needs a synthesis hierarchy instead of one agent flattening
+  everything into a generic summary.
+- **Handoff cost, not just token cost.** The design rationale has to justify
+  every agent *boundary*, not only the count — each handoff is a place
+  nuance can get lost. See `REFERENCES.md`'s "HR and BPR techniques" section
+  for the full map of what's adapted here and what's deliberately not.
 
 ## Contributing
 

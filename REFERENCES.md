@@ -97,6 +97,40 @@ see Origin above for that. The calibration ledger and the self-critique
 requirement predate this search too. What changed after reading them: the
 handbrake rule and the deferred-objection bookkeeping above.
 
+## HR and BPR techniques — what's adapted, what isn't
+
+Several mechanisms in this gate map onto standard HR and Business Process
+Reengineering (BPR) concepts. Some are adapted deliberately; others were
+proposed during this repo's own development and rejected because they'd add
+ceremony without a corresponding control. Listed here so the mapping isn't
+silent, and so the rejections don't get re-proposed without knowing why they
+were turned down once already.
+
+**Adapted:**
+
+| Technique | Where it lives |
+|---|---|
+| Job description / competency framework | Mandate + Skills in §1.3 |
+| Performance review | `run_trace.md`'s Score/Verification/Decision columns |
+| Retrospective / post-mortem | Estimate reconciliation (Path B step 7) |
+| Probation before full trust | The 3-run threshold before a role becomes a calibrated template |
+| Workload / burnout limits | `hard_caps` (max_iterations, max_agents, max_cost_budget) |
+| BPR — eliminate non-value-adding steps | Proportionality; "don't multiply agents if one suffices" |
+| BPR — single source of truth | `core/GATE.md` as the one copy of the rules; adapters don't duplicate it |
+| BPR — benchmark against existing work | The Scout role (§1.3.1) |
+| BPR — value stream mapping | The required workflow diagram (§2.1) |
+| BPR — span of control | §1.3: a synthesiser past ~5-6 parallel specialists needs a synthesis hierarchy |
+| BPR — handoff/coordination cost | Design rationale (§2.1) now justifies agent *boundaries*, not just agent count |
+
+**Considered and rejected:**
+
+| Technique | Why not |
+|---|---|
+| Reward/promotion — an agent that performs well gets more scope mid-project | Agent instances don't survive past their own run — there's no career to reward. Expanding scope in place is also exactly the creep Path B step 6's non-goals discipline exists to block. What persists instead: role-level performance and templates, not instance-level promotion. |
+| Points / XP / levels on top of the performance table | Repackages the same data into a less honest form — a "level" reads as a measurement where the raw acceptance rate is already the more truthful number. Risks biasing §1.3 toward reusing a "leveled-up" role instead of justifying one fresh, which rule 5's whole point is to prevent. |
+| RACI matrix per agent | The Judge pattern (§Path B step 6) already covers who resolves a conflict. A full RACI on top is exactly the "mechanism nobody checks the value of" this project's own restraint principle warns against. |
+| Compensation / incentive alignment | No sensible analogue — agents aren't motivated by incentives, and forcing the metaphor would be decoration, not a control. |
+
 ## Epistemic status of this document
 
 - **Evidence:** the existence and stated purpose of the projects listed above.

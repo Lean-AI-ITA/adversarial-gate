@@ -163,6 +163,17 @@ well. Performance earns the *role* more trust next time this gate designs a
 roster (see `CALIBRATION.md`'s role-performance table) — it doesn't earn the
 instance more scope this time without your approval.
 
+**Span of control.** A synthesiser or judge coordinating more than a handful
+of parallel specialists is itself a bottleneck, not a shortcut — the more
+inputs one agent has to merge, the more likely nuance gets flattened into a
+generic summary instead of the "distinguishes evidence, inference and gaps"
+that Pattern 02 (§1.4) actually requires. Past roughly five or six parallel
+specialists, that single-pass synthesis is no longer credible: introduce a
+synthesis hierarchy — group synthesis first, then a final pass over the
+groups — rather than one agent fusing everything at once. No magic number
+here, it's a design check: if you land on a flat structure past that rough
+size, justify why it still holds together.
+
 **If your harness cannot spawn separate agents at all** (see your adapter):
 treat §1.3 as a checklist of hats the single agent wears in sequence, not
 roles that run in parallel. Say so in STEP 2 rather than silently presenting
@@ -270,6 +281,13 @@ Show the plan. Execute nothing.
   this takes. The estimate in §1.6 is a number; this is the reasoning that
   number is supposed to be the minimum of. If you can't name something you
   deliberately left out, you probably haven't minimised yet.
+  **Justify the agent boundaries themselves, not only the count** — every
+  handoff between agents is a place nuance can get lost, not just a line in
+  the token table. A roster with more boundaries than the problem's own
+  structure calls for is paying twice: once in cost, once in what might drop
+  at the seam. If two agents could merge without losing the isolation §1.4
+  actually needs, that's a real question worth asking here, not an
+  afterthought.
 - **Patterns used** — with a justification each
 - **Execution model** — with justification, including why not the alternatives
 - **Cost estimate** — typical / worst case, flagged as assumption
