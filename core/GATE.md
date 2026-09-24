@@ -233,33 +233,50 @@ point and read it, not skim past it in scrollback. Format accordingly:
 
 ### 2.2 The contradictory review — the core of this gate
 
-Then open the floor:
+**Order matters here — self-critique runs before the floor opens, not after.**
+A critical-domain finding (rule 6) can only act as a handbrake if it's found
+*before* the general question goes out; found after, it's just one more
+reply in round 1, and the handbrake has nothing to interrupt.
 
-> *Do you have objections, doubts, or constraints I haven't considered?
-> Challenge my choices: agents, patterns, execution model, cost.*
+1. **Contest your own proposal against a fixed checklist first, not free
+   association.** Scan the plan against: *Security & data protection ·
+   Irreversibility · Cost/budget · Legal or regulatory exposure ·
+   Scalability/maintenance burden*. Surface whichever domains are actually
+   live for this plan — usually one or two; forcing all five every time is
+   theatre, not rigor. This is not humility theatre either way: the
+   assumptions an analyst doesn't notice are the ones that sink the work.
+
+   **Above Simple complexity (see Proportionality), don't run this
+   self-critique from the same context that designed the plan.** Use the
+   strongest isolation your harness offers — a spawned subagent if you have
+   one, otherwise a fresh session with no shared history — whose only brief
+   is to attack the proposal against that checklist. Same reasoning as the
+   isolated verifier in Pattern 03 (§1.4): a plan that critiques itself
+   marks its own homework — that failure mode isn't unique to code
+   verification.
+
+2. **Any finding that lands in rule 6's domains fires the handbrake right
+   here, before step 3 below.** Stop, name the domain(s), ask only about
+   that — one or more findings at once, all named together if several
+   surfaced. Do not proceed to the general floor until it's answered.
+
+3. **Only once step 2 is clear (nothing critical found, or a critical
+   finding just got resolved) do you open the general floor:**
+
+   > *Do you have objections, doubts, or constraints I haven't considered?
+   > Challenge my choices: agents, patterns, execution model, cost.*
+
+   Any non-critical self-critique findings from step 1 are folded in here,
+   as the opening move of round 1 — not asked separately.
 
 - The user objects → you **defend with arguments** or **revise**. Caving
   instantly is as useless as refusing to move.
-- **Contest your own proposal against a fixed checklist, not free
-  association.** Scan the plan against: *Security & data protection ·
-  Irreversibility · Cost/budget · Legal or regulatory exposure ·
-  Scalability/maintenance burden*. Surface whichever domains are actually
-  live for this plan — usually one or two; forcing all five every time is
-  theatre, not rigor. This is not humility theatre either way: the
-  assumptions an analyst doesn't notice are the ones that sink the work.
-- **Above Simple complexity (see Proportionality), don't run this
-  self-critique from the same context that designed the plan.** Use the
-  strongest isolation your harness offers — a spawned subagent if you have
-  one, otherwise a fresh session with no shared history — whose only brief is
-  to attack the proposal against that checklist, and fold its findings into
-  round 1. Same reasoning as the isolated verifier in Pattern 03 (§1.4): a
-  plan that critiques itself marks its own homework — that failure mode isn't
-  unique to code verification.
-- **Hard cap: 3 rounds.** On round 3 with objections still open, don't
-  quietly fold them into "the best version." **Carry every unresolved
-  objection forward by name**, into the handoff brief (§9) or the run trace,
-  marked *deferred — cap reached*. A dropped objection and a resolved one
-  must not look the same on paper.
+- **Hard cap: 3 rounds**, counted from when the general floor opens in step
+  3 — the handbrake exchange in step 2 doesn't spend one. On round 3 with
+  objections still open, don't quietly fold them into "the best version."
+  **Carry every unresolved objection forward by name**, into the handoff
+  brief (§9) or the run trace, marked *deferred — cap reached*. A dropped
+  objection and a resolved one must not look the same on paper.
 - No execution during the review.
 
 ---

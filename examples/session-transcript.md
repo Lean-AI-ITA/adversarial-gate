@@ -2,9 +2,11 @@
 
 An annotated transcript, running the Claude Code adapter (its engine
 vocabulary — subagents — shows up below). The logic is the same on every
-other adapter; only the engine names would change. The interesting moment is
-**round 2**, where a single user objection changes the architecture *before*
-any token is spent building.
+other adapter; only the engine names would change. Two moments worth
+watching: the **handbrake**, right after STEP 2 opens, which stops on a
+minors'-data question before any round starts counting — and **round 2**,
+where a single user objection changes the architecture *before* any token is
+spent building.
 
 > Annotations in blockquotes are commentary, not part of the session.
 
@@ -74,30 +76,51 @@ intermediate results won't saturate the context.
 
 ---
 
+## STEP 2 — Self-critique, before the floor opens
+
+Two weaknesses I'll raise against myself, checklist first:
+
+1. A2 checks features against constraints, but I never asked what you can
+   actually host. Not a critical-domain point — I'll fold it into the general
+   question below.
+2. I'm **assuming** parent-facing access to minors' data is in scope. That
+   *is* a critical-domain point — sensitive data, and a legal surface, not
+   just a feature.
+
+> ---
+> **HANDBRAKE — before anything else**
+>
+> Point 2 touches minors' data and legal exposure (rule 6). I'm not folding
+> it into a round. **Does parent access to children's data belong in scope at
+> all, or should this stay coach-only?** Everything else waits on this
+> answer.
+
+**User:** Yes — parents need access, that's the whole point, coaches are
+drowning in WhatsApp messages.
+
+**Adversarial Gate:** Understood — parent portal is confirmed in scope, and
+I'm adding data-minimisation as an explicit acceptance criterion rather than
+a note, since we've now committed to the surface that made it necessary.
+Handbrake cleared. Opening the general floor now.
+
+---
+
 ## STEP 2 — Contradictory review, round 1
 
 **Adversarial Gate:** Do you have objections? Challenge my choices: agents,
 patterns, engine, cost.
 
-Two weaknesses I'll raise against myself first:
+One more thing I'll raise against myself, now that it's a regular round: A2
+checks features against constraints, but I never asked what you can actually
+host. If the answer is "nothing, I have a laptop", half the architecture is
+wrong.
 
-1. A2 checks features against constraints, but I never asked what you can
-   actually host. If the answer is "nothing, I have a laptop", half the
-   architecture is wrong.
-2. I'm **assuming** parent-facing access to minors' data is in scope. That is a
-   legal surface, not a feature. If you'd rather avoid it entirely, the design
-   shrinks a lot.
+> The gate is required to surface its own weakest non-critical assumption
+> each round too — the handbrake doesn't excuse the rest of the checklist.
 
-> The skill is required to surface its own weakest assumption each round. The
-> assumptions an analyst doesn't notice are the ones that sink the work.
+**User:** There's a shared hosting account already.
 
-**User:** There's a shared hosting account already. And yes, parents need access
-— that's the whole point, coaches are drowning in WhatsApp messages.
-
-**Adversarial Gate:** Then I'm promoting the parent portal from a downstream
-feature to a primary driver, and adding data-minimisation as an explicit
-acceptance criterion rather than a note. Revised, not defended — your answer
-invalidated my ordering.
+**Adversarial Gate:** Good — no change needed there.
 
 ---
 
@@ -143,10 +166,10 @@ an analysis I wouldn't trust.
 **User:** A.
 
 **Adversarial Gate:** Handoff brief written to `handoff-brief-football-club.md`,
-including the record of this review: your hosting answer that re-ordered the
-architecture, and the A1 cut you argued for. Feed sections 1–6 into a
-spec-driven tool; carry section 9 forward unchanged — it's the audit trail of
-why the plan looks like this.
+including the record of this review: the handbrake on minors' data that
+promoted the parent portal to a primary driver, and the A1 cut you argued
+for. Feed sections 1–6 into a spec-driven tool; carry section 9 forward
+unchanged — it's the audit trail of why the plan looks like this.
 
 Stopping here. No code, no scaffolding, no execution.
 
@@ -159,7 +182,8 @@ Stopping here. No code, no scaffolding, no execution.
 | Asks before designing | opening exchange |
 | Justifies the engine, *including why not the others* | STEP 1 |
 | Labels the estimate as an assumption | token table |
-| Contests its own proposal | round 1 |
+| Contests its own proposal, checklist first | self-critique, before round 1 |
+| Handbrake fires before the floor opens, doesn't spend a round | minors' data exchange |
 | Revises when wrong, defends when right | rounds 1 and 2 |
 | Refuses to advance without explicit approval | STEP 3 |
 | Hands off instead of writing its own PRD | Path A |
