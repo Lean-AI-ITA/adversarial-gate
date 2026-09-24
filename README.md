@@ -140,6 +140,14 @@ Honest self-assessment, not a pitch:
   dynamic workflows in Claude Code. If you're not there yet, the token
   estimate and calibration ledger won't mean much — install it when that
   becomes true, not before.
+- **Especially relevant if you run local or self-hosted models.** Token cost
+  there isn't an abstract line on a bill — it's your own GPU, your own
+  electricity, your own twenty minutes watching inference run on the wrong
+  architecture. The cost-before-execution discipline hits harder when the
+  alternative is felt directly on your own hardware. One caveat, honestly
+  stated: §1.5's engine choice (subagents / agent teams / dynamic workflows)
+  is Claude Code vocabulary — mapping it onto a local orchestrator is an
+  adaptation, not a drop-in.
 
 ## Design notes
 
