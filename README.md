@@ -126,6 +126,10 @@ official engine documentation (which this skill deliberately does not duplicate)
 - **The critique doesn't mark its own homework either.** Past trivial
   complexity, the self-critique in the review runs as an isolated adversary
   subagent, not as the same context that designed the plan talking to itself.
+- **A preset, not a constant.** For user-facing product code, the default
+  starting slate is five roles — UX/product design, refactoring & performance,
+  security, product/user-needs liaison, and a scout for reusable prior art —
+  each cut or kept by argument in the review, never assumed.
 
 ## Contributing
 

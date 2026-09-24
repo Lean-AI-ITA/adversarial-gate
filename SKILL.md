@@ -99,6 +99,27 @@ Output · Skills · Quality criteria · Dependencies · Model*.
 > decide whether the work has value at all. A weak red-team produces weak
 > objections and a false green light.
 
+### 1.3.1 Preset: Product Build roster
+
+When the objective is to build something a user will directly use — a
+feature, an app, a UI, a product surface — propose this five-role roster as
+the **default starting slate**. It is a preset, not a constant: every role
+still gets its one-line justification in STEP 2, and any role that doesn't
+fit the request gets cut in the review, out loud, exactly like any other
+agent (§1.3). Silence is not how an agent gets removed — an argument is.
+
+| Role | Mandate | Cut it when |
+|---|---|---|
+| **UX/Product Designer** | Visual and interaction design, consistency | there is no user-facing surface (CLI flag, internal script, backend job) |
+| **Refactoring & Performance Optimizer** | Code quality, structure, efficiency | the deliverable is throwaway, one-off, with no maintenance horizon |
+| **Security Reviewer** | Vulnerabilities, secure-coding practice | no user input, no secrets, no network or data surface is touched |
+| **Product & User-Needs Liaison** | Keeps the build anchored to who it's for and why; turns that into acceptance criteria | the request is purely internal/technical with no end user to serve |
+| **Scout** | Searches existing repos, libraries and prior art before building, so nothing gets reinvented that already exists | the domain is novel or small enough that a search costs more than it saves |
+
+A trivial script is still **1 agent** — the preset does not override
+Proportionality below. For a Medium-or-above request whose goal is
+user-facing product code, propose all five and let STEP 2 do the cutting.
+
 ### 1.4 Workflow patterns (composable primitives)
 
 | # | Pattern | Logic | Use when | Rule |
@@ -330,3 +351,7 @@ From **Medium** complexity up, the self-critique in §2.2 runs as an isolated
 adversary subagent, not as the orchestrator narrating its own doubts — see the
 rule above. Below that, for a single-agent Simple plan, self-critique in the
 same context is proportionate; there is no second context to isolate it from.
+
+For user-facing product-code requests, "Medium" and "Complex" start from the
+five-role **Product Build roster** (§1.3.1), trimmed by justification — not
+from a fresh agent count invented per request.
