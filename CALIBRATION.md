@@ -126,3 +126,23 @@ gets better-calibrated defaults, per `core/GATE.md`'s load-balance note.
 No data yet. Populate from `run_trace.md`'s Score/Decision columns via
 Path B step 8 — same rule as every other table here: no row without a real
 run behind it.
+
+---
+
+## Calibrated role templates
+
+A role graduates here at **3 runs** — same threshold as the engine
+correction factor above, for the same reason: two data points is a guess
+wearing a template's clothes, not a calibrated one. Below 3 runs, a role
+stays in the performance table only.
+
+A template is a **starting point for design, not a substitute for it.**
+`core/GATE.md` §1.3 still requires presenting and justifying the role fresh
+in STEP 2 — reuse saves the cost of designing from a blank page, it does not
+exempt anything from the review. A role that stops fitting the request in
+front of it gets redesigned, not forced.
+
+| Role type | Runs | Acceptance rate | Objective | Responsibilities | Skills | Quality criteria | Typical model / effort |
+|---|---|---|---|---|---|---|---|
+
+No templates yet — none of the roles above have reached 3 runs.

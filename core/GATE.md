@@ -100,6 +100,17 @@ the one-line **Mandate** the user actually reads. Keep the full spec around;
 you'll need it if an agent gets challenged in §2.2 and you have to defend or
 revise it with specifics, not vibes.
 
+**Before designing a role from scratch, check `CALIBRATION.md`'s calibrated
+role templates.** Same ≥3-runs threshold as the engine correction factor in
+§1.6: below that, a role has no template yet — design it fresh, same as
+always. At or above it, start from the stored spec instead of a blank page —
+it's a real saving in *design* cost, not a shortcut on scrutiny. The
+template is a starting point, not a substitute for §2.1: present it, justify
+why it fits this request, and let it be challenged in STEP 2 like any agent
+you'd designed from nothing. If it doesn't fit, don't force it — redesign
+and say so; a template earns reuse, it doesn't earn immunity from being
+wrong for this particular request.
+
 **Model and effort routing** (cost containment, where available) — **two
 independent knobs, not one.** Model picks *which* capability; effort picks
 *how hard* it thinks within that capability. Don't burn depth on a task that
@@ -467,6 +478,13 @@ loop:                      # only if iteration is required
    redesigned from scratch next time §1.3 runs. This is what lets a role's
    track record inform its own model/effort routing next time, instead of
    every run re-deriving it from nothing.
+
+   **A role that just crossed 3 runs gets promoted to a calibrated
+   template**: copy its Objective/Responsibilities/Skills/Quality-criteria
+   spec and its typical model/effort into the templates table, alongside its
+   acceptance rate. Below 3 runs, leave it in the plain performance table
+   only — a template built on two data points is the same false confidence
+   §1.6 already refuses for token estimates.
 
    A run that isn't logged makes the next estimate no better than this one.
 

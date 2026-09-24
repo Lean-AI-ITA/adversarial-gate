@@ -221,6 +221,10 @@ Honest self-assessment, not a pitch:
   mid-build — an agent proving capable of more gets re-gated like any other
   adjacent work. What persists is `CALIBRATION.md`'s role-performance table,
   which calibrates how the *next* run designs that role.
+- **A role graduates to a reusable template at 3 runs, same threshold as the
+  engine correction factor.** Saves the cost of designing from a blank page —
+  never the scrutiny. A template still gets justified and challenged in
+  STEP 2 like any agent designed from nothing.
 
 ## Contributing
 
