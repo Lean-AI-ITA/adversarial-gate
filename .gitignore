@@ -1,0 +1,11 @@
+# Run artefacts produced by Path B — keep them out of the repo by default
+# CALIBRATION.md is intentionally tracked: it is the user's accumulated data
+run_trace*.md
+run_log*.json
+handoff-brief-*.md
+
+# Local / editor
+.DS_Store
+.idea/
+.vscode/
+*.log
