@@ -79,11 +79,16 @@ WP1 ──► WP2 ──► WP4
 **Engine used for the analysis:** <subagents / agent teams / dynamic workflow> — <one-line justification>
 **Patterns applied:** <list>
 **Rounds used:** <n> of 3
+**Self-critique run by:** orchestrator (Simple only) / isolated adversary subagent
 
-| # | Objection raised | Raised by | Outcome | Effect on the plan |
-|---|---|---|---|---|
-| 1 | | user / self | defended / revised | |
-| 2 | | | | |
+| # | Objection raised | Raised by | Domain (if critical) | Outcome | Effect on the plan |
+|---|---|---|---|---|---|
+| 1 | | user / self | — / security / irreversibility / cost / legal / scalability | defended / revised / **deferred — cap reached** | |
+| 2 | | | | | |
+
+> A row marked *deferred* is not resolved. It is the next reviewer's job to
+> pick it up, not to assume it was dismissed. A row marked with a domain other
+> than "—" was a handbrake, not a round — it stopped the flow until answered.
 
 **Token estimate for the analysis (assumption, not measurement):**
 

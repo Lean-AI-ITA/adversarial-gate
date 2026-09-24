@@ -44,6 +44,22 @@ conducted before execution and recorded as an artefact.** That gap is the reason
 this skill exists. If you find prior art, open an issue — the honest outcome of
 a duplicate finding is a link, not a competing repo.
 
+## Nearby: other adversarial-gate-style skills
+
+A follow-up search turned up several projects working similar territory. None
+do what this skill does end to end, but two of them changed this design —
+credited here rather than silently absorbed:
+
+| Project | What it does | What's different here |
+|---|---|---|
+| **carrilloapps/skills — Devil's Advocate** | A pre-action gate across 40+ agents and ~12 domains (security, architecture, compliance...), with a proceed/revise/cancel decision and a "handbrake" halt on critical findings | This skill is Claude-Code-specific, costs the plan in tokens, and runs a round-capped *dialogue with the human* rather than a framework sweep. **Borrowed:** the handbrake — see the critical-domain rule in `SKILL.md` §Absolute rules |
+| **Dzazaleo/adversarial-review-skills** | Cross-model review of *finished* code; a permanent ledger rules truthful/false per finding, and a deferred finding must produce a real backlog file, not a promise | This skill gates the plan *before* a token is spent, not the code after. **Borrowed:** the discipline that a deferred objection needs a real artefact — see the "deferred, cap reached" rows in `templates/handoff-brief.md` and `templates/run-trace.md` |
+| lemon03390, alirezarezvani, poteto, aojdevstudio — assorted `adversarial-review` skills | Also post-work code review; one worker + one critic pattern | Same category as above: reviews output, not a plan. No pre-spawn gate, no token estimate, no calibration ledger |
+
+None of these were the source of the original design — the gate, the token
+estimate and the calibration ledger predate this search. What changed after
+reading them: the handbrake rule and the deferred-objection bookkeeping above.
+
 ## Epistemic status of this document
 
 - **Evidence:** the existence and stated purpose of the projects listed above.

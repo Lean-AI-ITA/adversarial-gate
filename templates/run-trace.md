@@ -8,6 +8,15 @@ Run ID: <id> · Date: <date> · Engine: <subagents / agent teams / dynamic workf
 
 ---
 
+## 0. Deferred objections carried from the review (if any)
+
+> Only non-critical objections can reach this state — a critical-domain one is
+> a handbrake and must be answered before STEP 3, never deferred. Leave this
+> table empty if the review closed clean.
+
+| # | Objection | Domain | Raised by | Why still open |
+|---|---|---|---|---|
+
 ## 1. Goal & Loop (as approved)
 
 ```yaml

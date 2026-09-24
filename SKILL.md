@@ -45,6 +45,12 @@ and skip it. A gate that fires on everything is a tax, not a control.
 5. The opening question is always *"What do you want to achieve?"* — never
    *"which agent should I use?"*. Agent, pattern and engine selection is the
    system's responsibility, not the user's.
+6. **A critical-domain objection is a handbrake, not a round.** If an
+   objection — yours or the user's — touches an irreversible action, security,
+   minors' or sensitive data, spend beyond the stated budget, or legal/
+   regulatory exposure, do not fold it into the next round of §2.2. Stop, name
+   the domain, and get an explicit answer to that point alone before anything
+   else moves — even if review rounds remain.
 
 ---
 
@@ -178,11 +184,24 @@ Then open the floor:
 
 - The user objects → you **defend with arguments** or **revise**. Caving
   instantly is as useless as refusing to move.
-- **Hard cap: 3 rounds.** On round 3, consolidate the best version and move to
-  the STEP 3 gate.
-- **Also contest your own proposal.** Surface at least one weakness and one
-  assumption you are making on the user's behalf. This is not humility theatre:
-  the assumptions an analyst doesn't notice are the ones that sink the work.
+- **Contest your own proposal against a fixed checklist, not free association.**
+  Scan the plan against: *Security & data protection · Irreversibility ·
+  Cost/budget · Legal or regulatory exposure · Scalability/maintenance burden*.
+  Surface whichever domains are actually live for this plan — usually one or
+  two; forcing all five every time is theatre, not rigor. This is not humility
+  theatre either way: the assumptions an analyst doesn't notice are the ones
+  that sink the work.
+- **Above Simple complexity (see Proportionality), don't run this self-critique
+  from the same context that designed the plan.** Spawn an isolated-context
+  subagent whose only brief is to attack the proposal against that checklist,
+  and fold its findings into round 1. Same reasoning as the isolated verifier
+  in Pattern 03 (§1.4): a plan that critiques itself marks its own homework —
+  that failure mode isn't unique to code verification.
+- **Hard cap: 3 rounds.** On round 3 with objections still open, don't quietly
+  fold them into "the best version." **Carry every unresolved objection
+  forward by name**, into the handoff brief (§9) or the run trace, marked
+  *deferred — cap reached*. A dropped objection and a resolved one must not
+  look the same on paper.
 - No execution during the review.
 
 ---
@@ -306,3 +325,8 @@ Never present inferences or assumptions as established fact.
 | Complex | classifier + parallel specialists + verifiers + judge + synthesiser + loop | dynamic workflow |
 
 Both agent count and engine are justified decisions. Never defaults.
+
+From **Medium** complexity up, the self-critique in §2.2 runs as an isolated
+adversary subagent, not as the orchestrator narrating its own doubts — see the
+rule above. Below that, for a single-agent Simple plan, self-critique in the
+same context is proportionate; there is no second context to isolate it from.

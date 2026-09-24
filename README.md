@@ -98,6 +98,7 @@ This is a deliberately small piece. It is **complementary**, not competitive:
 | A full spec-driven development lifecycle | GitHub Spec Kit |
 | PRD → task graph decomposition and tracking | Task Master |
 | Production runtime, budgets, approval workflows at infra level | Shannon |
+| Adversarial review of code that's already written | adversarial-review skills (Dzazaleo, lemon03390, others — see `REFERENCES.md`) |
 | **A cheap, conversational gate that makes you justify the plan and the spend before any of the above start** | **this** |
 
 It does not write its own requirements document. Path A produces a compact
@@ -119,6 +120,12 @@ official engine documentation (which this skill deliberately does not duplicate)
   Assumption / Uncertainty. Estimates are never dressed up as measurements.
 - **No unbounded loops.** Every loop carries a soft stop condition *and* a hard
   cap, and declares a partial state on cap.
+- **Handbrake, not a round.** An objection touching security, irreversibility,
+  minors'/sensitive data, budget or legal exposure stops the flow outright —
+  it does not wait its turn in the 3-round cap.
+- **The critique doesn't mark its own homework either.** Past trivial
+  complexity, the self-critique in the review runs as an isolated adversary
+  subagent, not as the same context that designed the plan talking to itself.
 
 ## Contributing
 
