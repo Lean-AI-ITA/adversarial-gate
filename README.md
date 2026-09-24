@@ -123,6 +123,24 @@ raised and how they were resolved.
 See [`REFERENCES.md`](REFERENCES.md) for the landscape and for links to the
 official engine documentation (which this skill deliberately does not duplicate).
 
+## Is this for you?
+
+Honest self-assessment, not a pitch:
+
+- **You'll like it if** an agent has ever executed a plan flawlessly and you
+  still got the wrong thing — and you'd rather spend 90 seconds justifying a
+  plan than an afternoon undoing one.
+- **You won't like it if** you want agents to just go, and any pause reads as
+  friction rather than insurance. That's a legitimate preference, not a bug
+  report — this gate is built to get out of the way on trivial requests (see
+  *Proportional* below), but it will never fully disappear on non-trivial ones.
+  It's friction sold on purpose, to people who've already paid for the
+  alternative once.
+- **It assumes** you're already orchestrating subagents, agent teams or
+  dynamic workflows in Claude Code. If you're not there yet, the token
+  estimate and calibration ledger won't mean much — install it when that
+  becomes true, not before.
+
 ## Design notes
 
 - **Proportional.** If a request is trivial, the gate says so and gets out of
