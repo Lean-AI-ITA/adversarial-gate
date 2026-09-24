@@ -377,6 +377,21 @@ loop:                      # only if iteration is required
    the divergence touches the Definition of Done; if unresolvable, declare
    the uncertainty rather than picking arbitrarily.
 
+   **Complex builds (see Proportionality) get one mid-course checkpoint.**
+   After the first work package/task completes and passes verification,
+   pause before continuing to the rest:
+   > *First package done and verified — continue on the same plan, or adjust
+   > before I spend the rest of the budget?*
+   This is not a second STEP 3 — no re-justification, no new estimate, one
+   lightweight confirmation. Its only job is catching a wrong turn while a
+   fraction of the budget is spent instead of all of it. Simple and Medium
+   builds skip this: a single upfront gate is still enough at that scale, and
+   a checkpoint there would be exactly the friction this gate is supposed to
+   spend deliberately, not scatter everywhere. Log the outcome (continued
+   unchanged / adjusted) in `run_trace.md` and in `CALIBRATION.md`'s
+   checkpoint table — same discipline as everything else here: a mechanism
+   nobody checks the value of is a superstition, not a control.
+
    **Stop at the edge of `non_goals`.** If useful adjacent work appears —
    especially work you already listed as out of scope — do not absorb it
    into the current run. Finish, report, and re-gate it as its own package
@@ -441,3 +456,9 @@ there is no second context to isolate it from.
 For user-facing product-code requests, "Medium" and "Complex" start from the
 five-role **Product Build roster** (§1.3.1), trimmed by justification — not
 from a fresh agent count invented per request.
+
+**Complex** is also the only tier that gets the mid-course checkpoint in
+Path B step 6 — the scale where a wrong turn discovered only at the end is
+expensive enough to justify one pause. Simple and Medium run straight
+through after STEP 3; adding a checkpoint there would be cost with no
+corresponding risk to justify it.

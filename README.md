@@ -208,6 +208,10 @@ Honest self-assessment, not a pitch:
 - **Scope direction is tracked, not just scope change.** `CALIBRATION.md` logs
   whether review objections shrank the plan, grew it, or just rearranged
   it — a review that only ever grows the plan back isn't earning its keep.
+- **One checkpoint mid-build, only where the risk justifies it.** Complex
+  builds pause once, after the first work package, before the rest of the
+  budget is spent. Simple and Medium run straight through — a checkpoint
+  there would be cost with no risk behind it to justify it.
 
 ## Contributing
 

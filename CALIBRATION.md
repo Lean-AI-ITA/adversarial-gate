@@ -86,6 +86,23 @@ the non-goals discipline in Path B step 6 depends on cuts actually sticking.
 |---|---|---|---|
 | 0 | — | — | — |
 
+---
+
+## Complex-build checkpoints
+
+Tracks whether the mid-course checkpoint (Path B step 6, Complex builds
+only) is earning its keep. If it never catches anything, it's ceremony and
+should be dropped back to a single upfront gate like Simple/Medium. If it
+catches something most of the time, the upfront analysis in STEP 1 is too
+optimistic and needs tightening instead of patching mid-build.
+
+| Complex runs | Checkpoint hit | Continued unchanged | Adjusted |
+|---|---|---|---|
+| 0 | — | — | — |
+
+No data yet. A Complex build is rare enough that this table will fill
+slowly — don't force a row from a Simple or Medium run to pad it.
+
 No data yet — this table starts empty on purpose. Populate it from real
 Path B step 8 runs only; a plausible-looking number here that didn't come
 from an actual review is exactly the "confident guess on two data points"

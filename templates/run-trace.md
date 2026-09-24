@@ -37,6 +37,14 @@ loop:
   on_cap_reached: "stop, declare partial state, report what is missing"
 ```
 
+## 1.1 Complex-build checkpoint (Complex only — delete this section otherwise)
+
+After the first work package/task, verified, before spending the rest of
+the budget:
+
+- **Outcome:** continued unchanged / adjusted
+- **If adjusted, what changed:**
+
 ## 2. Execution log
 
 | Task | Agent | Input | Output | Status | Verification | Score | Decision | Tokens |
