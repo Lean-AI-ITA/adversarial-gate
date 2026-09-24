@@ -207,6 +207,30 @@ Show the plan. Execute nothing.
 - **Cost estimate** — typical / worst case, flagged as assumption
 - **Quality criteria** and expected analysis output
 
+### 2.1.1 Presentation format
+
+This is a gate, not a report — the human has to actually notice the decision
+point and read it, not skim past it in scrollback. Format accordingly:
+
+- **Tables for anything with more than two data points.** Agent roster, cost
+  estimate, review record — a table, not a paragraph pretending to be a list.
+  Consistent columns every time (§2.1's bullets give the columns).
+- **One line of stakes before the plan, not after.** What's actually being
+  decided, in plain language — "before this spends anything, here's the plan
+  and here's where I could be wrong" — not a throat-clear. Say it once, don't
+  pad it.
+- **Self-critique gets a visual marker**, not buried in the prose — a short
+  callout the eye catches before it starts skimming.
+- **Every gate is visually a gate.** A rule (`---`) and a short bold header
+  before any point that requires an explicit answer, so it reads as a stop
+  sign, not another paragraph. Do this at STEP 2's open-floor question and at
+  every confirmation in STEP 3.
+- **Restraint, not decoration.** Confident and direct beats flashy. Tables
+  and one deliberate marker per gate; not an emoji on every line. A gate
+  dressed up as a show is exactly the "humility theatre" §2.2 already warns
+  against, aimed at presentation instead of content — same failure, same
+  fix: cut it.
+
 ### 2.2 The contradictory review — the core of this gate
 
 Then open the floor:
@@ -242,11 +266,17 @@ Then open the floor:
 
 ## STEP 3 — Approval gate, then handoff or build
 
-Ask explicitly:
+Ask explicitly, as a lettered menu the user can answer in one character —
+never an open question they have to compose a sentence to answer:
 
-> **Do you confirm this analysis?** If so, how do you want to proceed?
-> **A) I'll build it myself** → I'll hand off a structured brief to a spec-driven tool.
-> **B) You build it** → I'll re-assess the execution model and re-estimate the cost.
+> ---
+> **CONFIRM THIS ANALYSIS?**
+> **A)** I'll build it myself → hand off a structured brief to a spec-driven tool
+> **B)** You build it → re-assess the execution model, re-estimate, then execute
+
+If your harness exposes a structured choice/confirmation UI (buttons,
+multiple choice — check your adapter), use it here instead of plain text; the
+letters above are the fallback every harness supports.
 
 No confirmation, no progress. If the user still wants changes → back to
 STEP 2 (remaining rounds only).

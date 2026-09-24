@@ -28,6 +28,7 @@ explicit approval.
 | 🔀 **Two ways out, both execution-aware** | **PATH A** hands off a structured brief to a spec-driven PRD tool; **PATH B** builds directly, choosing the execution model your harness actually offers — picked twice, once for the analysis, once for the build, and justified both times |
 | 🌐 **One gate, six harnesses** | Claude Code, Cursor, Copilot, Codex CLI, OpenCode, Aider — same `core/GATE.md`, one adapter per harness for what genuinely differs (isolation, invocation, whether subagents exist at all) |
 | 🤝 **Hands off instead of competing** | Writes no PRD of its own — produces a handoff brief carrying the one artefact nobody else keeps: the record of the review |
+| 📋 **Reads like a gate, not a wall of text** | Tables for anything with more than two data points, every approval point marked as a visible stop, lettered A/B menus instead of open questions — see §2.1.1 in `core/GATE.md` |
 
 ## The problem
 

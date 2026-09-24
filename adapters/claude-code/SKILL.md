@@ -41,3 +41,9 @@ this repo can offer.
 **Slash-command invocation:** copying this skill's `name:` field makes it
 invocable as `/adversarial-gate`, on top of the automatic trigger from
 `description:` above.
+
+**Structured choices:** where your session exposes a structured
+multiple-choice/confirmation tool, use it for STEP 3's A/B and for any other
+explicit approval in `core/GATE.md` §2.1.1 — the user picks instead of
+typing a sentence. If it isn't available in this session, fall back to the
+lettered text menu; don't claim a UI that isn't there.

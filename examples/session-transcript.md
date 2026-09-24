@@ -127,15 +127,18 @@ an analysis I wouldn't trust.
 
 ## STEP 3 — Approval gate
 
-**Adversarial Gate:** Do you confirm this analysis? If so, how do you want to
-proceed?
+**Adversarial Gate:**
 
-**A) I'll build it myself** → I hand off a structured brief.
-**B) You build it** → I re-assess the engine for the build, re-estimate cost,
-ask for final confirmation, then execute with traceability.
+> ---
+> **CONFIRM THIS ANALYSIS?**
+> **A)** I'll build it myself → hand off a structured brief
+> **B)** You build it → re-assess the engine, re-estimate cost, confirm again, execute with traceability
 
 > Two rounds used, one remaining. Without an explicit answer here, nothing
 > proceeds — "sounds good" about something else does not count as approval.
+> Note the format too: a rule and a bold header, not another paragraph — the
+> point is that this reads as a stop sign in scrollback, not something to
+> skim past (§2.1.1).
 
 **User:** A.
 
